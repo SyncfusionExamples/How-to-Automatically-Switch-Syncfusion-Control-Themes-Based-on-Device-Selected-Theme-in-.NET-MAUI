@@ -18,10 +18,7 @@ namespace ThemeSample
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-            
+                CounterBtn.Text = $"Clicked {count} times";            
         }
 
         protected override void OnAppearing()
@@ -29,12 +26,12 @@ namespace ThemeSample
             if (Application.Current != null)
             {
                 this.ApplyTheme(Application.Current.RequestedTheme);
-                Application.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
+                Application.Current.RequestedThemeChanged += OnRequestedThemeChanged;
             }
             base.OnAppearing();
         }
 
-        private void Current_RequestedThemeChanged(object? sender, AppThemeChangedEventArgs e)
+        private void OnRequestedThemeChanged(object? sender, AppThemeChangedEventArgs e)
         {
             this.ApplyTheme(e.RequestedTheme);
         }
@@ -46,16 +43,16 @@ namespace ThemeSample
                 ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
                 if (mergedDictionaries != null)
                 {
-                    var theme = mergedDictionaries.OfType<SyncfusionThemeResourceDictionary>().FirstOrDefault();
-                    if (theme != null)
+                    var syncTheme = mergedDictionaries.OfType<SyncfusionThemeResourceDictionary>().FirstOrDefault();
+                    if (syncTheme != null)
                     {
                         if (appTheme is AppTheme.Light)
                         {
-                            theme.VisualTheme = SfVisuals.MaterialLight;
+                            syncTheme.VisualTheme = SfVisuals.MaterialLight;
                         }
                         else
                         {
-                            theme.VisualTheme = SfVisuals.MaterialDark;
+                            syncTheme.VisualTheme = SfVisuals.MaterialDark;
                         }
                     }
                 }
