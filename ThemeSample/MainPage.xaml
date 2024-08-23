@@ -9,11 +9,7 @@
             Padding="30,0"
             Spacing="25">            
 
-            <buttons:SfButton
-                x:Name="CounterBtn"
-                Text="Click me" 
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            <buttons:SfButton Text="Click me"/>
         </VerticalStackLayout>
     </ScrollView>
 
