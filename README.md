@@ -1,4 +1,4 @@
-This article explains how to automatically switch [.NET MAUI Syncfusion control](https://www.syncfusion.com/maui-controls) themes based on the device-selected theme. This can be achieved by using [SyncfusionThemeResourceDictionary](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Themes.SyncfusionThemeResourceDictionary.html).
+This article explains how to automatically switch [.NET MAUI Syncfusion control](https://www.syncfusion.com/maui-controls) themes based on the device-selected theme. This can be achieved by using [SyncfusionThemeResourceDictionary.](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Themes.SyncfusionThemeResourceDictionary.html)
 
 To enable automatic theme switching for Syncfusion controls based on the device's selected theme in a .NET MAUI application, you can utilize the `OnAppearing` method to assign the Syncfusion [VisualTheme](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Themes.SyncfusionThemeResourceDictionary.html#Syncfusion_Maui_Themes_SyncfusionThemeResourceDictionary_VisualTheme). Additionally, handling the `RequestedThemeChanged` event allows for dynamic updates to the Syncfusion controls' theme when the device's theme changes at runtime.
 
@@ -25,10 +25,7 @@ Ensure that your App.xaml includes the `SyncfusionThemeResourceDictionary`:
 ```
 //Mainpage.xaml
 
-<VerticalStackLayout Padding="30,0" Spacing="25">         
-    <buttons:SfButton x:Name="CounterBtn" Text="Click me" Clicked="OnCounterClicked"
-                      HorizontalOptions="Fill" />
-</VerticalStackLayout>
+<buttons:SfButton Text="Click me"/>
 ```
 
 **C#**
@@ -81,4 +78,4 @@ public void ApplyTheme(AppTheme appTheme)
 
 **Output**
 
-![Theme_Demo.gif](https://support.bolddesk.com/kb/agent/attachment/article/17196/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4NDcxIiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5ib2xkZGVzay5jb20ifQ.YNDjr4zoII7A6wHES18wM0xTiidGYFkQ_t7WmRjcdWg)
+![Syncfusion_Theme.gif](https://support.syncfusion.com/kb/agent/attachment/article/17196/inline?token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI4NTk2Iiwib3JnaWQiOiIzIiwiaXNzIjoic3VwcG9ydC5zeW5jZnVzaW9uLmNvbSJ9.7r4hevpPJfTfKP_XNNkLBxRsiN0xVs-TugVUtAonZ0o)
